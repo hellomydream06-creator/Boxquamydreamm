@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dream | Hộp Quà Tặng Cao Cấp, Sinh Nhật & Nến Thơm Nghệ Thuật</title>
+  
+  <meta name="description" content="My Dream chuyên cung cấp hộp quà tặng cao cấp, quà sinh nhật, set nến thơm thư giãn, quà tặng người yêu Valentine và quà tặng handmade nghệ thuật. Đóng gói thủ công tỉ mỉ, giao hỏa tốc 2H tại Hà Nội và TP.HCM.">
+  <meta name="keywords" content="hộp quà tặng, box quà sinh nhật, quà tặng bạn gái, nến thơm cao cấp, quà tặng handmade, blind box sách, quà tặng valentine, my dream giftbox">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Swiper.js Slider CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOPBAR
+       ========================================================================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <span>💌 <b>[ƯU ĐÃI ĐẶC QUYỀN]</b> Miễn phí viết thiệp tay nghệ thuật & thắt nơ lụa satin cho mọi đơn hàng!</span>
+          </div>
+          <div class="swiper-slide">
+            <span>🚀 <b>Giao hỏa tốc 2H</b> tại nội thành Hà Nội & TP. Hồ Chí Minh - Đúng hẹn, trọn vẹn bất ngờ!</span>
+          </div>
+          <div class="swiper-slide">
+            <span>🎁 <b>Càng mua càng giảm:</b> Mua từ 2 box quà giảm ngay 5%, tích điểm đến 10%!</span>
+          </div>
+          <div class="swiper-slide">
+            <span>🛡️ <b>Bảo hiểm vận chuyển 100%:</b> Đổi mới ngay lập tức nếu hộp quà móp méo khi giao!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. SITE HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle-btn" onclick="toggleMobileNav()" title="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-logo-icon">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <div class="brand-logo-text">
+            <span class="brand-logo-title">MY DREAM</span>
+            <span class="brand-logo-sub">GIFT STUDIO</span>
+          </div>
+        </a>
+
+        <!-- Search Bar with Live Dropdown -->
+        <div class="header-search">
+          <div class="search-input-wrap">
+            <input type="text" id="header-search-input" class="search-input" placeholder="Tìm hộp quà sinh nhật, nến thơm, quà tặng nàng..." autocomplete="off">
+            <button class="search-btn" title="Tìm kiếm">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
+
+        <!-- Header Actions (Right) -->
+        <div class="header-actions">
+          <!-- Order Lookup -->
+          <a href="javascript:void(0)" onclick="openOrderLookup()" class="action-btn" title="Tra cứu đơn hàng">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+            <span class="d-none-sm">Tra cứu</span>
+          </a>
+
+          <!-- Showroom Location -->
+          <a href="#footer-branches" class="action-btn" title="Hệ thống Showroom">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="d-none-sm">Cửa hàng</span>
+          </a>
+
+          <!-- Wishlist -->
+          <a href="javascript:void(0)" id="header-wishlist-btn" class="action-btn" title="Hộp quà yêu thích">
+            <i class="fa-regular fa-heart"></i>
+            <span class="action-badge" id="wishlist-badge" style="display:none">0</span>
+            <span class="d-none-sm">Yêu thích</span>
+          </a>
+
+          <!-- Cart -->
+          <a href="javascript:void(0)" id="header-cart-btn" class="action-btn" title="Giỏ hàng">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="action-badge" id="cart-badge" style="display:none">0</span>
+            <span class="d-none-sm">Giỏ hàng</span>
+          </a>
+
+          <!-- User Authentication (Login/Register or User Profile Dropdown) -->
+          <div id="auth-user-container" class="auth-user-container" style="display: flex; align-items: center; gap: 4px;">
+            <button type="button" class="action-btn" onclick="openAuthModal('login')" title="Đăng nhập tài khoản">
+              <i class="fa-regular fa-user"></i>
+              <span class="d-none-sm">Đăng nhập</span>
+            </button>
+            <button type="button" class="action-btn btn-reg-nav" onclick="openAuthModal('register')" title="Đăng ký tài khoản mới" style="color: var(--accent); font-weight: 700;">
+              <i class="fa-solid fa-user-plus" style="color: var(--accent);"></i>
+              <span class="d-none-sm">Đăng ký</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Navigation Menu (Desktop) - Clean Single-Line Header Layout -->
+    <nav class="site-nav">
+      <div class="container">
+        <div class="site-nav-inner">
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">
+                <i class="fa-solid fa-house"></i> Trang Chủ
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#section-catalog" class="nav-link" onclick="filterCategory('birthday')">
+                Quà Sinh Nhật <i class="fa-solid fa-angle-down"></i>
+              </a>
+              <ul class="nav-dropdown">
+                <li><a href="javascript:void(0)" onclick="filterCategory('birthday')" class="dropdown-link">🎂 Box Sinh Nhật Bạn Gái</a></li>
+                <li><a href="javascript:void(0)" onclick="filterCategory('birthday')" class="dropdown-link">✨ Box Sinh Nhật Đèn LED</a></li>
+                <li><a href="javascript:void(0)" onclick="filterCategory('birthday')" class="dropdown-link">🌷 Box Sinh Nhật Đất Nung Tulip</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#section-catalog" class="nav-link" onclick="filterCategory('candle')">
+                Nến Thơm & Spa <i class="fa-solid fa-angle-down"></i>
+              </a>
+              <ul class="nav-dropdown">
+                <li><a href="javascript:void(0)" onclick="filterCategory('candle')" class="dropdown-link">🕯️ Nến Bấc Gỗ Amber & Bergamot</a></li>
+                <li><a href="javascript:void(0)" onclick="filterCategory('candle')" class="dropdown-link">🌿 Nến Thơm Seagrass Healing</a></li>
+                <li><a href="javascript:void(0)" onclick="filterCategory('candle')" class="dropdown-link">🌸 Set Nến Thơm Kèm Hoa Khô</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#section-catalog" class="nav-link" onclick="filterCategory('love')">
+                Tình Yêu
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#section-catalog" class="nav-link" onclick="filterCategory('handmade')">
+                Handmade Len
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#section-catalog" class="nav-link" onclick="filterCategory('blindbox')">
+                Sách Bí Ẩn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#section-catalog" class="nav-link" onclick="filterCategory('sweet')">
+                Bánh & Socola
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#section-blog" class="nav-link">
+                Cẩm Nang
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="reviews.html" class="nav-link">
+                ⭐ Đánh Giá
+              </a>
+            </li>
+          </ul>
+
+          <!-- Exclusive Interactive Workshop Tools (Right Side Luxury Pills) -->
+          <div class="nav-special-features">
+            <button type="button" class="nav-feature-pill pill-builder" onclick="openCustomBuilder()" title="Tự tay chọn hộp và từng món quà">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Tự Phối Quà</span>
+            </button>
+            <button type="button" class="nav-feature-pill pill-card" onclick="openCardPreview()" title="Soạn lời chúc & in thiệp nghệ thuật 3D">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span>Viết Thiệp 3D</span>
+            </button>
+            <button type="button" class="nav-feature-pill pill-wheel" onclick="openLuckyWheel()" title="Vòng quay nhận voucher tới 150k">
+              <i class="fa-solid fa-dharmachakra"></i>
+              <span>Vòng Quay</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       3. BOTTOMBAR COMMITMENTS (TICKER RIBBON)
+       ========================================================================== -->
+  <div class="bottombar">
+    <div class="container">
+      <div class="commit-grid">
+        <div class="commit-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span>Freeship đơn từ 500k toàn quốc</span>
+        </div>
+        <div class="commit-item">
+          <i class="fa-solid fa-pen-fancy"></i>
+          <span>Miễn phí viết thiệp tay nghệ thuật</span>
+        </div>
+        <div class="commit-item">
+          <i class="fa-solid fa-award"></i>
+          <span>100% quà tuyển chọn cao cấp</span>
+        </div>
+        <div class="commit-item">
+          <i class="fa-solid fa-rotate-left"></i>
+          <span>Đổi trả miễn phí trong 7 ngày</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       4. HERO BANNER SLIDER
+       ========================================================================== -->
+  <section class="hero-slider-section">
+    <div class="container">
+      <div class="hero-slider swiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Slide 1 -->
+          <div class="swiper-slide hero-slide" style="background-image: url('images/box_qua_21.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="hero-tag animate-float">Bộ Sưu Tập Sinh Nhật 2026</span>
+              <h1 class="hero-title">Trao Yêu Thương, Gửi Trọn Tấm Lòng Tinh Tế</h1>
+              <p class="hero-desc">Mỗi chiếc hộp quà là một tác phẩm nghệ thuật thủ công, gói trọn cảm xúc ngọt ngào và sự trân trọng dành cho người bạn thương mến.</p>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                <a href="#products-section" class="btn-primary">
+                  <span>Khám Phá Bộ Sưu Tập</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button type="button" onclick="openCustomBuilder()" class="btn-primary" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); border: 2px solid #FFF; color: #FFF;">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  <span>Tự Phối Hộp Quà</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide hero-slide" style="background-image: url('images/box_qua_19.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="hero-tag">Liệu Pháp Mùi Hương</span>
+              <h2 class="hero-title">Set Nến Thơm & Hoa Khô Chữa Lành Tâm Hồn</h2>
+              <p class="hero-desc">Đắm chìm trong hương thơm thảo mộc ấm áp, tiếng bấc gỗ lách tách êm dịu và vẻ đẹp vĩnh cửu của những nhành hoa khô phong cách Bắc Âu.</p>
+              <a href="javascript:void(0)" onclick="filterCategory('candle')" class="btn-primary">
+                <span>Xem Hộp Quà Nến Thơm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide hero-slide" style="background-image: url('images/box_qua_27.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="hero-tag">Sweet Romance Series</span>
+              <h2 class="hero-title">Ngọt Ngào Đậm Sâu Cùng Socola & Macaron Pháp</h2>
+              <p class="hero-desc">Những viên socola Ferrero Rocher bọc vàng quý phái kết hợp cùng bánh Macaron 6 vị thượng hạng cho ngày kỷ niệm thêm phần thăng hoa.</p>
+              <a href="javascript:void(0)" onclick="filterCategory('sweet')" class="btn-primary">
+                <span>Đặt Quà Tình Yêu Ngay</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="swiper-button-prev hero-prev"></div>
+        <div class="swiper-button-next hero-next"></div>
+        <div class="swiper-pagination hero-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. SERVICE POLICIES (4 COLUMNS - CHUẨN MY DREAM)
+       ========================================================================== -->
+  <section class="section-policies">
+    <div class="container">
+      <div class="policy-grid">
+        
+        <div class="policy-card">
+          <div class="policy-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div class="policy-info">
+            <h4>Giao Hàng Hỏa Tốc 2H</h4>
+            <p>Nhận quà ngay trong ngày tại nội thành Hà Nội & TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <div class="policy-info">
+            <h4>Đóng Gói Thủ Công</h4>
+            <p>Tỉ mỉ từng lớp rơm lót, thắt nơ lụa và viết thiệp thư nắn nót</p>
+          </div>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <div class="policy-info">
+            <h4>Bảo Hiểm Va Đập 100%</h4>
+            <p>Cam kết đổi mới miễn phí nếu hộp quà bị móp méo khi vận chuyển</p>
+          </div>
+        </div>
+
+        <div class="policy-card">
+          <div class="policy-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div class="policy-info">
+            <h4>Hotline: 0966.888.790</h4>
+            <p>Tư vấn chọn quà tặng phù hợp từng đối tượng từ 8h30 - 21h30</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. CATEGORIES CIRCULAR SLIDER (DANH MỤC NỔI BẬT)
+       ========================================================================== -->
+  <section class="section-categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Khám Phá Thế Giới Quà Tặng</span>
+        <h2 class="section-title">Danh Mục Hộp Quà Nổi Bật</h2>
+        <p class="section-subtitle">Tuyển chọn các concept hộp quà đa dạng phong cách, phù hợp mọi dịp kỷ niệm và ngày lễ đặc biệt</p>
+      </div>
+
+      <div class="categories-slider-wrap" style="position: relative;">
+        <div class="categories-slider swiper">
+          <div class="swiper-wrapper" id="categories-container">
+            <!-- Rendered dynamically from data.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. FLASH SALE SECTION (ĐẾM NGƯỢC COUNTDOWN TIMER)
+       ========================================================================== -->
+  <section class="section-flashsale">
+    <div class="container">
+      <div class="flashsale-wrapper">
+        
+        <div class="flashsale-header">
+          <div class="flashsale-title-wrap">
+            <div class="flashsale-icon animate-pulse-glow">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div>
+              <h2 class="flashsale-title">GIỜ VÀNG QUÀ TẶNG - <span>FLASH SALE</span></h2>
+              <span style="font-size: 13px; color: var(--text-muted);">Ưu đãi độc quyền giảm đến 40% trong hôm nay</span>
+            </div>
+          </div>
+
+          <!-- Countdown Timer Display -->
+          <div class="countdown-container">
+            <span style="font-weight: 700; font-size: 13px; color: var(--primary-dark); margin-right: 6px;">KẾT THÚC SAU:</span>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cd-days">02</div>
+              <div class="countdown-label">Ngày</div>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cd-hours">14</div>
+              <div class="countdown-label">Giờ</div>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cd-mins">35</div>
+              <div class="countdown-label">Phút</div>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cd-secs">20</div>
+              <div class="countdown-label">Giây</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flashsale Product Slider -->
+        <div class="flashsale-slider-wrap" style="position: relative;">
+          <div class="flashsale-slider swiper">
+            <div class="swiper-wrapper" id="flashsale-container">
+              <!-- Rendered dynamically from data.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. PROMO 3-BANNERS GRID
+       ========================================================================== -->
+  <section class="section-promo-banners">
+    <div class="container">
+      <div class="promo-grid">
+        
+        <div class="promo-card">
+          <img src="images/box_qua_22.jpg" alt="Aesthetic Blue" loading="lazy">
+          <div class="promo-overlay">
+            <span class="promo-tag">Phong Cách Hàn Quốc</span>
+            <h3 class="promo-title">Góc Học Tập & Thư Giãn</h3>
+            <a href="javascript:void(0)" onclick="openQuickView('box-05')" class="promo-link">Khám phá chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <img src="images/box_qua_24.jpg" alt="Sage Green Healing" loading="lazy">
+          <div class="promo-overlay">
+            <span class="promo-tag">Healing Collection</span>
+            <h3 class="promo-title">Nến Thơm Sáp Tự Nhiên</h3>
+            <a href="javascript:void(0)" onclick="openQuickView('box-06')" class="promo-link">Khám phá chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <img src="images/box_qua_14.jpg" alt="Blind Box Books" loading="lazy">
+          <div class="promo-overlay">
+            <span class="promo-tag">Trào Lưu Giới Trẻ</span>
+            <h3 class="promo-title">Blind Box Sách Bí Ẩn</h3>
+            <a href="javascript:void(0)" onclick="openQuickView('box-08')" class="promo-link">Khám phá chi tiết <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. TABS PRODUCT SECTION
+       ========================================================================== -->
+  <section class="section-products" id="products-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Bộ Sưu Tập Tuyển Chọn</span>
+        <h2 class="section-title">Hộp Quà Trao Gửi Cảm Xúc</h2>
+        <p class="section-subtitle">Lựa chọn món quà hoàn hảo nhất cho người thân yêu theo từng phong cách và sở thích riêng</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="product-tabs-nav">
+        <button class="tab-btn active" data-category="all" onclick="filterCategory('all')">Tất Cả Hộp Quà</button>
+        <button class="tab-btn" data-category="birthday" onclick="filterCategory('birthday')">Sinh Nhật</button>
+        <button class="tab-btn" data-category="candle" onclick="filterCategory('candle')">Nến Thơm & Spa</button>
+        <button class="tab-btn" data-category="love" onclick="filterCategory('love')">Tình Yêu / Valentine</button>
+        <button class="tab-btn" data-category="handmade" onclick="filterCategory('handmade')">Handmade & Len</button>
+        <button class="tab-btn" data-category="blindbox" onclick="filterCategory('blindbox')">Blind Box Sách</button>
+        <button class="tab-btn" data-category="sweet" onclick="filterCategory('sweet')">Bánh Ngọt & Socola</button>
+      </div>
+
+      <!-- Smart Filter & Budget Toolbar -->
+      <div class="smart-filter-toolbar">
+        <div class="filter-row">
+          <span class="filter-label"><i class="fa-solid fa-gift"></i> Dịp tặng:</span>
+          <div class="filter-chips" id="filter-occasion-chips">
+            <button class="filter-chip active" onclick="setOccasionFilter('all', this)">Tất cả dịp</button>
+            <button class="filter-chip" onclick="setOccasionFilter('birthday', this)">🎂 Sinh nhật</button>
+            <button class="filter-chip" onclick="setOccasionFilter('love', this)">❤️ Tỏ tình / Kỷ niệm</button>
+            <button class="filter-chip" onclick="setOccasionFilter('candle', this)">🌿 Chữa lành & Relax</button>
+            <button class="filter-chip" onclick="setOccasionFilter('handmade', this)">🧶 Handmade & Len</button>
+            <button class="filter-chip" onclick="setOccasionFilter('blindbox', this)">📚 Blind Box Sách</button>
+            <button class="filter-chip" onclick="setOccasionFilter('sweet', this)">🍫 Ngọt ngào & Bánh</button>
+          </div>
+        </div>
+
+        <div class="filter-row" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="filter-label"><i class="fa-solid fa-tag"></i> Ngân sách:</span>
+            <div class="filter-chips" id="filter-budget-chips">
+              <button class="filter-chip active" onclick="setBudgetFilter('all', this)">Tất cả mức giá</button>
+              <button class="filter-chip" onclick="setBudgetFilter('under-350', this)">Dưới 350k</button>
+              <button class="filter-chip" onclick="setBudgetFilter('350-500', this)">350k - 500k</button>
+              <button class="filter-chip" onclick="setBudgetFilter('500-750', this)">500k - 750k</button>
+              <button class="filter-chip" onclick="setBudgetFilter('above-750', this)">Trên 750k</button>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="filter-label" style="min-width: unset;"><i class="fa-solid fa-arrow-down-short-wide"></i> Sắp xếp:</span>
+            <select class="filter-sort-select" onchange="setSortFilter(this.value)">
+              <option value="featured">✨ Nổi bật nhất</option>
+              <option value="price-asc">💵 Giá tăng dần</option>
+              <option value="price-desc">💎 Giá giảm dần</option>
+              <option value="rating">⭐ Đánh giá cao nhất</option>
+              <option value="discount">🔥 Giảm giá nhiều nhất</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. SHOWCASE BANNER (NẾN THƠM NGHỆ THUẬT)
+       ========================================================================== -->
+  <section class="section-showcase">
+    <div class="container">
+      <div class="showcase-banner">
+        
+        <div class="showcase-content">
+          <span class="showcase-tag">BST Tinh Hoa Quà Tặng</span>
+          <h2 class="showcase-title">Nghệ Thuật Gói Ghém Hương Thơm & Cảm Xúc</h2>
+          <p class="showcase-desc">My Dream kết hợp hoàn hảo giữa những hũ nến thơm sáp đậu nành thiên nhiên nhập khẩu, gốm sứ mộc mạc và bó hoa khô trường tồn, mang đến sự thư thái tuyệt đối cho người nhận.</p>
+          
+          <div class="showcase-features">
+            <div class="showcase-feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>100% Sáp thực vật lành tính</span>
+            </div>
+            <div class="showcase-feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Bấc gỗ crackle nổ lách tách</span>
+            </div>
+            <div class="showcase-feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Tặng kèm diêm quẹt mỹ thuật</span>
+            </div>
+            <div class="showcase-feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Thiệp hoa khô ép thủ công</span>
+            </div>
+          </div>
+
+          <a href="javascript:void(0)" onclick="filterCategory('candle')" class="btn-primary">
+            <span>Khám Phá Dòng Nến Thơm</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <img src="images/box_qua_19.jpg" alt="Showcase Gift Box" class="showcase-img" loading="lazy">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. ABOUT US - 4 CORE VALUES (GIỐNG MY DREAM)
+       ========================================================================== -->
+  <section class="section-about" id="section-about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Dream</span>
+        <h2 class="section-title">Về Chúng Tôi & Giá Trị Cốt Lõi</h2>
+        <p class="section-subtitle">Với hơn 8 năm tâm huyết trong ngành quà tặng nghệ thuật, chúng tôi tin rằng một món quà ý nghĩa bắt đầu từ sự tỉ mỉ trong từng chi tiết nhỏ nhất.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-number">01</div>
+          <h4 class="value-title">Tuyển Chọn Tỉ Mỉ</h4>
+          <p class="value-desc">Mỗi sản phẩm bên trong hộp từ cốc gốm, nến thơm đến thanh socola đều được chọn lọc kỹ về nguồn gốc và chất lượng cao cấp.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">02</div>
+          <h4 class="value-title">Nghệ Thuật Đóng Gói</h4>
+          <p class="value-desc">Hộp quà được phủ rơm thơm lót êm, thắt nơ satin kép sang trọng và xếp đặt theo bố cục thị giác hài hòa, bắt mắt.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">03</div>
+          <h4 class="value-title">Cá Nhân Hóa Lời Chúc</h4>
+          <p class="value-desc">My Dream hỗ trợ nắn nót viết thiệp tay theo nội dung bạn yêu cầu hoặc in ảnh kỷ niệm polaroid đính kèm hộp quà.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">04</div>
+          <h4 class="value-title">Bảo Vệ Vận Chuyển 3 Lớp</h4>
+          <p class="value-desc">Hộp quà được bọc túi khí chống sốc 3 lớp cùng thùng carton bảo vệ bên ngoài, đảm bảo món quà đến tay hoàn hảo như tại tiệm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       12. WHY CHOOSE US
+       ========================================================================== -->
+  <section class="section-why">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Trải Nghiệm Mua Sắm An Tâm</span>
+        <h2 class="section-title">Vì Sao Khách Hàng Luôn Tin Chọn My Dream?</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <h4 class="why-title">Showroom Trực Tiếp</h4>
+          <p class="why-desc">Có cửa hàng vật lý tại Hà Nội và TP.HCM để bạn ghé thăm, ngửi thử mùi hương nến và chọn từng phụ kiện.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <h4 class="why-title">Chụp Ảnh Trước Khi Giao</h4>
+          <p class="why-desc">My Dream luôn chụp ảnh hộp quà thực tế sau khi đóng gói hoàn tất để gửi bạn duyệt trước khi shipper lên đường.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-square-parking"></i>
+          </div>
+          <h4 class="why-title">Chỗ Đỗ Xe Thuận Tiện</h4>
+          <p class="why-desc">Các cơ sở đều tọa lạc tại các trục đường lớn, có bãi đỗ xe máy và ô tô rộng rãi, an ninh để bạn thoải mái lựa đồ.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <h4 class="why-title">Combo Quà Tặng Đa Dạng</h4>
+          <p class="why-desc">Thiết kế sẵn các combo quà tặng đồng bộ màu sắc với mức giá ưu đãi, tiết kiệm hơn từ 20% đến 35% so với mua lẻ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       13. BLOG / GIFTING GUIDE SECTION
+       ========================================================================== -->
+  <section class="section-blog" id="section-blog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Cẩm Nang Quà Tặng</span>
+        <h2 class="section-title">Tin Tức & Bí Quyết Tặng Quà</h2>
+        <p class="section-subtitle">Chia sẻ những câu chuyện và bí quyết tinh tế giúp bạn ghi điểm tuyệt đối trong mắt người thương</p>
+      </div>
+
+      <div class="blog-grid" id="blog-grid">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       14. CUSTOMER REVIEWS
+       ========================================================================== -->
+  <section class="section-reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Khách Hàng Nói Về Chúng Tôi</span>
+        <h2 class="section-title">Đánh Giá Từ Khách Hàng</h2>
+        <p class="section-subtitle">Sự hài lòng và nụ cười rạng rỡ của người nhận quà là động lực lớn nhất của My Dream</p>
+      </div>
+
+      <div class="reviews-slider-wrap" style="position: relative;">
+        <div class="reviews-slider swiper">
+          <div class="swiper-wrapper" id="reviews-container">
+            <!-- Rendered dynamically from data.js -->
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+        <a href="reviews.html" class="btn-primary" style="padding: 12px 26px; border-radius: 30px; text-decoration: none; font-size: 14px; box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);">
+          <i class="fa-solid fa-pen-nib"></i> Viết Đánh Giá (Dành Cho Khách Đã Mua)
+        </a>
+        <a href="reviews.html" class="btn-outline" style="padding: 12px 24px; border-radius: 30px; border: 1.5px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
+          <span>Xem Tất Cả 1,280+ Đánh Giá Đã Mua Hàng</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       15. PARTNERS & BRANDS
+       ========================================================================== -->
+  <section class="section-partners">
+    <div class="container">
+      <div class="partners-slider swiper">
+        <div class="swiper-wrapper" id="partners-container">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       16. FOOTER (CHUẨN THÔNG TIN CỦA CÔNG TY AHG / MY DREAM)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-logo-icon">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+            <div class="brand-logo-text">
+              <span class="brand-logo-title" style="color: #fff;">MY DREAM</span>
+              <span class="brand-logo-sub">GIFT STUDIO</span>
+            </div>
+          </div>
+          <p>Hệ thống cửa hàng hộp quà tặng nghệ thuật cao cấp. Chuyên cung ứng quà sinh nhật, set nến thơm thư giãn, quà tặng người yêu Valentine và quà tặng doanh nghiệp chỉn chu, tinh tế.</p>
+          <div class="footer-legal-badge">
+            <i class="fa-solid fa-building"></i> Đơn vị chủ quản: CÔNG TY TNHH AHG<br>
+            <i class="fa-solid fa-barcode"></i> MST: 0315417566 (Cấp ngày: 01/12/2018)
+          </div>
+        </div>
+
+        <!-- Col 2: Showroom Locations -->
+        <div class="footer-col" id="footer-branches">
+          <h4>Hệ Thống Showroom</h4>
+          
+          <div class="branch-item">
+            <strong><i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Showroom 1 - TP. Hồ Chí Minh:</strong>
+            <p>28 Hoa Hồng, Phường Cầu Kiệu, Q. Phú Nhuận, TP.HCM</p>
+            <p>Hotline: <a href="tel:0966888790" style="color: #FFD4C4; font-weight: 700;">0966 888 790</a></p>
+          </div>
+
+          <div class="branch-item">
+            <strong><i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> Showroom 2 - Hà Nội:</strong>
+            <p>290 Lê Trọng Tấn, P. Khương Mai, Q. Thanh Xuân, Hà Nội</p>
+            <p>Hotline: <a href="tel:0966778790" style="color: #FFD4C4; font-weight: 700;">0966 778 790</a></p>
+          </div>
+
+          <div class="branch-item">
+            <strong><i class="fa-regular fa-clock" style="color: var(--accent);"></i> Giờ mở cửa:</strong>
+            <p>08:30 - 21:30 (Mở cửa tất cả các ngày trong tuần)</p>
+          </div>
+        </div>
+
+        <!-- Col 3: Policies Links -->
+        <div class="footer-col">
+          <h4>Chính Sách & Hỗ Trợ</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openOrderLookup()" style="color: #FFE49E; font-weight: 700;"><i class="fa-solid fa-truck-ramp-box"></i> Tra cứu đơn hàng hỏa tốc</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Chính sách giao hỏa tốc 2H & Freeship từ 500k!')">Chính sách vận chuyển</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Bảo hành 1 đổi 1 trong 7 ngày nếu sản phẩm lỗi!')">Chính sách đổi trả hàng</a></li>
+            <li><a href="javascript:void(0)" onclick="openCardPreview()">Dịch vụ viết thiệp tay 3D</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Hỗ trợ chuyển khoản VietQR, Momo và COD khi nhận hàng!')">Phương thức thanh toán</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('My Dream cam kết bảo mật 100% thông tin khách hàng!')">Bảo mật thông tin</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col">
+          <h4>Nhận Mã Giảm Giá 10%</h4>
+          <p style="font-size: 13px; color: rgba(255, 255, 255, 0.7);">Đăng ký nhận thông báo về các bộ sưu tập quà tặng theo mùa và voucher ưu đãi độc quyền.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Đăng ký thành công! Mã MY DREAM10 đã gửi tới email của bạn!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Nhập địa chỉ email của bạn..." required>
+            <button type="submit" class="newsletter-btn">Đăng Ký Ngay</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 My Dream. Bản quyền thuộc về CÔNG TY TNHH AHG.</span>
+        <span>Phát triển trên nền tảng Web độc lập - Chạy trực tiếp trong Visual Studio Code.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       17. QUICK VIEW MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="quickview-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" onclick="closeQuickView()" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="quickview-layout">
+        <!-- Gallery -->
+        <div class="quickview-gallery">
+          <img id="qv-main-img" src="" alt="Main Image" class="quickview-main-img">
+          <div class="quickview-thumbs" id="qv-thumbs">
+            <!-- Thumbs injected via JS -->
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="quickview-info">
+          <span class="product-category" id="qv-category">Danh mục</span>
+          <h2 id="qv-title">Tên hộp quà</h2>
+          
+          <div class="quickview-rating-row" style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 13px; flex-wrap: wrap;">
+            <div style="color: #F4A261;">
+              <i class="fa-solid fa-star"></i>
+              <span id="qv-rating" style="font-weight: 700; color: #2C2825;">4.9</span>
+            </div>
+            <a href="reviews.html" id="qv-reviews-count" style="color: var(--accent); font-weight: 600; text-decoration: underline;" title="Xem các đánh giá thực tế">
+              (82 đánh giá)
+            </a>
+            <span style="color: #D4A373;">•</span>
+            <button type="button" onclick="promptProductReview()" style="background: none; border: none; color: var(--primary); font-size: 12.5px; font-weight: 700; text-decoration: underline; cursor: pointer;">
+              <i class="fa-solid fa-pen-nib"></i> Đánh giá hộp này
+            </button>
+          </div>
+
+          <div class="quickview-price-wrap">
+            <span class="quickview-price" id="qv-price">0₫</span>
+            <span class="quickview-old-price" id="qv-old-price"></span>
+          </div>
+
+          <p class="quickview-desc" id="qv-desc">Mô tả sản phẩm...</p>
+
+          <div class="quickview-includes">
+            <h4><i class="fa-solid fa-box-open" style="color: var(--accent);"></i> Hộp quà bao gồm:</h4>
+            <ul id="qv-includes-list">
+              <!-- Injected via JS -->
+            </ul>
+          </div>
+
+          <div class="quickview-qty-row">
+            <span style="font-size: 13px; font-weight: 700; color: var(--primary-dark);">Số lượng:</span>
+            <div class="qty-control">
+              <button class="qty-btn" onclick="adjustQuickViewQty(-1)">-</button>
+              <input type="text" id="qv-qty-input" class="qty-input" value="1" readonly>
+              <button class="qty-btn" onclick="adjustQuickViewQty(1)">+</button>
+            </div>
+            
+            <button class="btn-primary" style="flex: 1;" onclick="addQuickViewToCart(event)">
+              <i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ Hàng
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       18. CART DRAWER (SLIDE-OUT FROM RIGHT)
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      
+      <div class="cart-drawer-header">
+        <h3><i class="fa-solid fa-bag-shopping" style="color: var(--accent);"></i> Giỏ Hàng Quà Tặng</h3>
+        <button class="cart-close-btn" id="cart-close-btn" title="Đóng">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Free Shipping Progress -->
+      <div class="cart-freeship-bar">
+        <span id="freeship-text">Mua thêm 500.000₫ để được Miễn Phí Vận Chuyển!</span>
+        <div class="freeship-progress-track">
+          <div class="freeship-progress-fill" id="freeship-progress" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-drawer-items" id="cart-drawer-items">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Footer / Checkout -->
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span>Tạm tính:</span>
+          <span class="cart-total-price" id="cart-drawer-total">0₫</span>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; text-align: center;">
+          <i class="fa-solid fa-gift"></i> Đã bao gồm túi đựng quà & thiệp viết tay miễn phí
+        </p>
+        <button class="btn-checkout" onclick="openCheckout()">Tiến Hành Đặt Hàng Ngay</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       19. CHECKOUT MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-box checkout-modal-box">
+      <button class="modal-close-btn" onclick="closeCheckout()" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="section-header" style="margin-bottom: 20px; text-align: left;">
+        <span class="section-tag">Thanh Toán Đơn Hàng</span>
+        <h2 class="section-title" style="font-size: 24px;">Thông Tin Giao Quà</h2>
+        <p style="font-size: 13px; color: var(--text-muted);">Vui lòng cung cấp thông tin người nhận và lời nhắn muốn ghi trên thiệp</p>
+      </div>
+
+      <form class="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="checkout-name">Họ và tên người nhận *</label>
+            <input type="text" id="checkout-name" class="form-control" placeholder="Ví dụ: Nguyễn Thùy Linh" required>
+          </div>
+          <div class="form-group">
+            <label for="checkout-phone">Số điện thoại *</label>
+            <input type="tel" id="checkout-phone" class="form-control" placeholder="Ví dụ: 0912 345 678" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-address">Địa chỉ nhận quà chi tiết *</label>
+          <input type="text" id="checkout-address" class="form-control" placeholder="Số nhà, ngõ, tên đường, phường/xã, quận/huyện..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-card-note">Lời chúc viết thiệp (My Dream viết tay miễn phí 💌)</label>
+          <textarea id="checkout-card-note" class="form-control" rows="3" placeholder="Nhập lời nhắn gửi bạn muốn My Dream viết nắn nót vào tấm thiệp bên trong hộp quà..."></textarea>
+        </div>
+
+        <!-- Voucher / Coupon Input -->
+        <div class="form-group" style="background: #FDF9F7; padding: 12px 14px; border-radius: var(--radius-sm); border: 1px dashed var(--accent);">
+          <label style="font-size: 13px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-ticket"></i> Mã giảm giá / Voucher ưu đãi
+          </label>
+          <div style="display: flex; gap: 8px; margin-top: 6px;">
+            <input type="text" id="checkout-voucher-input" class="form-control" placeholder="Nhập mã (VD: MYDREAM10, GIAM50K...)" style="text-transform: uppercase; font-weight: 700;">
+            <button type="button" class="btn-primary" style="padding: 8px 16px; font-size: 13px;" onclick="applyVoucher()">Áp Dụng</button>
+          </div>
+          <div id="voucher-applied-info" style="margin-top: 6px; font-size: 12px; color: var(--secondary); font-weight: 700; display: none;"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Phương thức thanh toán</label>
+          <div class="payment-options">
+            <label class="payment-radio-label">
+              <input type="radio" name="payment_method" value="cod" checked onchange="togglePaymentMethod('cod')">
+              <span><i class="fa-solid fa-money-bill-wave" style="color: #4D6A54;"></i> Tiền mặt khi nhận (COD)</span>
+            </label>
+            <label class="payment-radio-label">
+              <input type="radio" name="payment_method" value="vietqr" onchange="togglePaymentMethod('vietqr')">
+              <span><i class="fa-solid fa-qrcode" style="color: #0068FF;"></i> Chuyển khoản VietQR / MBBank</span>
+            </label>
+          </div>
+
+          <!-- Dynamic VietQR Box -->
+          <div id="checkout-vietqr-box" class="vietqr-box" style="display: none;">
+            <p style="font-weight: 800; color: #0068FF; font-size: 14px; margin-bottom: 6px;">
+              <i class="fa-solid fa-bolt"></i> QUÉT MÃ VIETQR THANH TOÁN TỰ ĐỘNG
+            </p>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">Mở ứng dụng ngân hàng hoặc MoMo quét mã QR bên dưới:</p>
+            <div class="vietqr-img-wrapper">
+              <img id="vietqr-image" src="" alt="Mã VietQR Thanh Toán" class="vietqr-img">
+            </div>
+            
+            <div style="text-align: left; background: #FFFFFF; padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid #E2E8F0; margin-top: 10px;">
+              <div class="qr-detail-row">
+                <span style="color: var(--text-muted);">Ngân hàng:</span>
+                <strong>MBBank (Ngân hàng Quân Đội)</strong>
+              </div>
+              <div class="qr-detail-row">
+                <span style="color: var(--text-muted);">Số tài khoản:</span>
+                <div>
+                  <strong id="qr-bank-acc" style="color: #0068FF; font-size: 14px;">00614210326257</strong>
+                  <button type="button" class="qr-copy-btn" onclick="copyText('00614210326257', 'Đã chép số tài khoản!')">Chép</button>
+                </div>
+              </div>
+              <div class="qr-detail-row">
+                <span style="color: var(--text-muted);">Chủ tài khoản:</span>
+                <strong id="qr-bank-owner">TRAN HUYNH AI NHAN</strong>
+              </div>
+              <div class="qr-detail-row">
+                <span style="color: var(--text-muted);">Số tiền thanh toán:</span>
+                <strong id="qr-amount-text" style="color: var(--price-color); font-size: 15px;">0₫</strong>
+              </div>
+              <div class="qr-detail-row">
+                <span style="color: var(--text-muted);">Nội dung chuyển:</span>
+                <div>
+                  <strong id="qr-memo-text" style="color: #7D4F38; font-family: monospace;">MD-GIFT</strong>
+                  <button type="button" class="qr-copy-btn" onclick="copyMemo()">Chép</button>
+                </div>
+              </div>
+            </div>
+            <p style="font-size: 11px; color: var(--text-muted); margin-top: 10px;">
+              <i class="fa-solid fa-shield-halved" style="color: var(--secondary);"></i> Hệ thống sẽ tự động đối soát và bắt đầu đóng gói quà ngay khi giao dịch thành công.
+            </p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-checkout" style="margin-top: 14px;">
+          <i class="fa-solid fa-heart"></i> Xác Nhận Đặt Hàng & Giao Hỏa Tốc
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       20. LUCKY WHEEL FLOATING BUTTON & MODAL
+       ========================================================================== -->
+  <button id="lucky-wheel-fab" class="lucky-wheel-fab animate-wheel-wobble" onclick="openLuckyWheel()" title="Vòng Quay May Mắn">
+    <i class="fa-solid fa-dharmachakra animate-spin-slow"></i>
+    <span>VÒNG QUAY MAY MẮN</span>
+  </button>
+
+  <div class="modal-overlay" id="lucky-wheel-modal">
+    <div class="modal-box wheel-modal-box">
+      <button class="modal-close-btn" onclick="closeLuckyWheel()" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="margin-bottom: 8px;">
+        <span class="section-tag" style="background: #FFE3D8; color: #C83E2B;">My Dream Rewards</span>
+        <h3 style="font-family: var(--font-serif); font-size: 22px; color: var(--primary-dark); margin-top: 4px;">Vòng Quay May Mắn</h3>
+        <p style="font-size: 12px; color: var(--text-muted);">Quay ngay nhận quà - 100% trúng voucher giảm giá đến 20% & quà tặng!</p>
+      </div>
+
+      <div class="wheel-container">
+        <!-- Pointer Arrow -->
+        <div class="wheel-pointer">
+          <svg viewBox="0 0 30 36" width="30" height="36" fill="#C83E2B">
+            <path d="M15 36 L0 8 C0 3.6 6.7 0 15 0 C23.3 0 30 3.6 30 8 Z"/>
+          </svg>
+        </div>
+        <canvas id="wheel-canvas" width="620" height="620"></canvas>
+        <button id="wheel-spin-btn" class="wheel-center-btn" onclick="spinLuckyWheel()">
+          <span>QUAY</span>
+          <span style="font-size: 10px; font-weight: 600;">NGAY</span>
+        </button>
+      </div>
+
+      <!-- Prize result banner -->
+      <div id="wheel-prize-banner" class="wheel-prize-banner">
+        <h4 id="prize-title" style="color: #C83E2B; font-size: 16px; margin-bottom: 4px;">🎉 Chúc mừng bạn đã trúng GIẢM 10%!</h4>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Mã ưu đãi độc quyền của bạn:</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+          <span id="prize-voucher-code" style="font-family: monospace; font-size: 16px; font-weight: 800; background: #FFF; padding: 4px 12px; border-radius: 4px; border: 1px dashed #C83E2B; color: #C83E2B;">MYDREAM10</span>
+          <button type="button" class="btn-primary" style="padding: 6px 14px; font-size: 12px;" onclick="applyWheelVoucher()">Dùng Ngay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       21. CUSTOM BOX BUILDER MODAL (TỰ PHỐI HỘP QUÀ)
+       ========================================================================== -->
+  <div class="modal-overlay" id="builder-modal">
+    <div class="modal-box builder-modal-box">
+      <!-- Header -->
+      <div class="builder-header">
+        <button class="modal-close-btn" onclick="closeCustomBuilder()" title="Đóng">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="brand-logo-icon" style="width: 32px; height: 32px; font-size: 14px;"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 20px; color: var(--primary-dark); margin: 0;">Workshop Tự Phối Hộp Quà Theo Ý Thích</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Tùy chọn từng vỏ hộp, món quà, phụ kiện nơ rơm & thiệp nắn nót</p>
+          </div>
+        </div>
+
+        <!-- Stepper -->
+        <div class="builder-stepper">
+          <div class="step-indicator active" id="step-ind-1" onclick="goToBuilderStep(1)">
+            <div class="step-dot">1</div>
+            <span class="step-title">Chọn Vỏ Hộp</span>
+          </div>
+          <div class="step-indicator" id="step-ind-2" onclick="goToBuilderStep(2)">
+            <div class="step-dot">2</div>
+            <span class="step-title">Chọn Món Quà</span>
+          </div>
+          <div class="step-indicator" id="step-ind-3" onclick="goToBuilderStep(3)">
+            <div class="step-dot">3</div>
+            <span class="step-title">Rơm, Nơ & Đèn</span>
+          </div>
+          <div class="step-indicator" id="step-ind-4" onclick="goToBuilderStep(4)">
+            <div class="step-dot">4</div>
+            <span class="step-title">Hoàn Tất</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="builder-body">
+        <!-- Content Panel -->
+        <div class="builder-content">
+          <!-- Step 1: Boxes -->
+          <div id="builder-step-1" class="builder-step-pane">
+            <h4 style="font-size: 15px; margin-bottom: 12px; color: var(--primary-dark);">Bước 1: Chọn kiểu dáng & màu sắc vỏ hộp</h4>
+            <div class="builder-grid" id="builder-boxes-grid"></div>
+          </div>
+
+          <!-- Step 2: Items inside -->
+          <div id="builder-step-2" class="builder-step-pane" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h4 style="font-size: 15px; color: var(--primary-dark); margin: 0;">Bước 2: Chọn các món quà đặt bên trong hộp (Chọn từ 1 - 5 món)</h4>
+              <div style="font-size: 12px; color: var(--text-muted);">Đã chọn: <strong id="builder-selected-items-count" style="color: var(--accent);">0 món</strong></div>
+            </div>
+            <div class="builder-grid" id="builder-items-grid"></div>
+          </div>
+
+          <!-- Step 3: Straw & Ribbon & Extras -->
+          <div id="builder-step-3" class="builder-step-pane" style="display: none;">
+            <h4 style="font-size: 15px; margin-bottom: 12px; color: var(--primary-dark);">Bước 3: Tùy biến rơm lót, màu nơ lụa & hiệu ứng đèn LED</h4>
+            
+            <div style="margin-bottom: 18px;">
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-main);">Màu rơm giấy lót êm:</label>
+              <div class="color-palette" id="builder-fillers-list"></div>
+            </div>
+
+            <div style="margin-bottom: 18px;">
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-main);">Màu dải ruy băng nơ lụa Satin:</label>
+              <div class="color-palette" id="builder-ribbons-list"></div>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; color: var(--text-main);">Phụ kiện kèm thêm:</label>
+              <div id="builder-extras-list" style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;"></div>
+            </div>
+          </div>
+
+          <!-- Step 4: Review -->
+          <div id="builder-step-4" class="builder-step-pane" style="display: none;">
+            <h4 style="font-size: 15px; margin-bottom: 12px; color: var(--primary-dark);">Bước 4: Tổng kết & Kiểm tra hộp quà của bạn</h4>
+            <div id="builder-final-summary-details"></div>
+          </div>
+        </div>
+
+        <!-- Summary Panel -->
+        <div class="builder-summary-panel">
+          <div>
+            <h5 style="font-size: 13px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 12px;">Mô phỏng hộp quà trực tiếp</h5>
+            <div class="box-mockup-stage">
+              <div class="mockup-box-body" id="mockup-box" style="background-color: #FAF0E6;">
+                <div class="mockup-ribbon" id="mockup-ribbon" style="background-color: #7B1E2B;"></div>
+                <div class="mockup-items-grid" id="mockup-items-grid"></div>
+              </div>
+            </div>
+
+            <h5 style="font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark);">Chi tiết phối quà:</h5>
+            <div id="builder-summary-list" style="font-size: 12px; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; max-height: 140px; overflow-y: auto;">
+              <em>Chưa chọn vỏ hộp...</em>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+              <span style="font-size: 13px; font-weight: 700;">Tổng giá trị:</span>
+              <strong id="builder-total-price" style="font-size: 20px; color: var(--price-color);">0₫</strong>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-primary" id="builder-back-btn" onclick="prevBuilderStep()" style="background: var(--bg-subtle); color: var(--text-main); flex: 1; display: none;">Quay Lại</button>
+              <button type="button" class="btn-primary" id="builder-next-btn" onclick="nextBuilderStep()" style="flex: 2;">Tiếp Tục</button>
+              <button type="button" class="btn-primary" id="builder-add-btn" onclick="addCustomBoxToCart()" style="flex: 2; display: none; background: #C83E2B;">
+                <i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       22. 3D LIVE GREETING CARD MODAL (VIẾT THIỆP 3D)
+       ========================================================================== -->
+  <div class="modal-overlay" id="card-modal">
+    <div class="modal-box card-modal-box">
+      <button class="modal-close-btn" onclick="closeCardPreview()" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="section-header" style="margin-bottom: 20px; text-align: left;">
+        <span class="section-tag" style="background: #FFF0ED; color: var(--accent);">Dịch Vụ Miễn Phí</span>
+        <h3 class="section-title" style="font-size: 22px;">Viết Thiệp Nghệ Thuật & Xem Trước 3D</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Mỗi lời chúc chân thành đều được nghệ nhân My Dream nắn nót viết tay tỉ mỉ đặt trang trọng vào hộp quà.</p>
+      </div>
+
+      <div class="card-builder-layout">
+        <!-- Controls -->
+        <div class="card-controls">
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label style="font-size: 12px; font-weight: 700;">Chọn mẫu thiệp nghệ thuật:</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;" id="card-template-picker"></div>
+          </div>
+
+          <div class="form-row" style="margin-bottom: 12px;">
+            <div class="form-group">
+              <label style="font-size: 12px; font-weight: 700;">Gửi đến (Tên người nhận):</label>
+              <input type="text" id="card-to-input" class="form-control" placeholder="Ví dụ: Em bé Thùy Linh..." value="Em bé Thùy Linh ❤️" oninput="updateLiveCard()">
+            </div>
+            <div class="form-group">
+              <label style="font-size: 12px; font-weight: 700;">Người gửi (Từ):</label>
+              <input type="text" id="card-from-input" class="form-control" placeholder="Ví dụ: Anh Quân..." value="Anh Quân của em" oninput="updateLiveCard()">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label style="font-size: 12px; font-weight: 700; margin: 0;">Nội dung lời nhắn:</label>
+              <div style="display: flex; gap: 4px;">
+                <button type="button" class="filter-chip" style="padding: 2px 8px; font-size: 11px;" onclick="setCardPreset('birthday')">Sinh nhật</button>
+                <button type="button" class="filter-chip" style="padding: 2px 8px; font-size: 11px;" onclick="setCardPreset('love')">Tình yêu</button>
+                <button type="button" class="filter-chip" style="padding: 2px 8px; font-size: 11px;" onclick="setCardPreset('healing')">Động viên</button>
+              </div>
+            </div>
+            <textarea id="card-message-input" class="form-control" rows="4" placeholder="Nhập lời tâm tình bạn muốn gửi gắm..." oninput="updateLiveCard()">Chúc mừng sinh nhật cô gái tuyệt vời nhất trần đời! Mong em luôn mỉm cười rạng rỡ, bình yên trong tâm hồn và luôn hạnh phúc khi ở bên cạnh anh nhé!</textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label style="font-size: 12px; font-weight: 700;">Phong cách chữ viết tay:</label>
+            <select id="card-font-select" class="form-control" onchange="updateCardFont(this.value)">
+              <option value="'Caveat', cursive">Nét chữ Caveat lãng mạn, thanh thoát</option>
+              <option value="'Dancing Script', cursive">Nét chữ Dancing Script uyển chuyển nghệ thuật</option>
+              <option value="'Playfair Display', serif">Chữ Serif cổ điển hoàng gia</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn-primary" style="width: 100%;" onclick="saveCardToOrder()">
+            <i class="fa-solid fa-heart"></i> Sử Dụng Lời Chúc Này Khi Đặt Hàng
+          </button>
+        </div>
+
+        <!-- 3D Card Preview Mockup -->
+        <div class="card-3d-wrapper">
+          <div class="greeting-card-3d animate-card-float" id="preview-card-3d" style="background: linear-gradient(135deg, #FFF0ED 0%, #FFD8CE 100%);">
+            <div class="card-stamp" id="card-stamp-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="card-dear" id="card-preview-dear" style="color: #5A281E;">Gửi: Em bé Thùy Linh ❤️</div>
+            <div class="card-message-text" id="card-preview-text" style="color: #5A281E;">Chúc mừng sinh nhật cô gái tuyệt vời nhất trần đời! Mong em luôn mỉm cười rạng rỡ, bình yên trong tâm hồn và luôn hạnh phúc khi ở bên cạnh anh nhé!</div>
+            <div class="card-signature" id="card-preview-from" style="color: #5A281E;">Thương yêu, Anh Quân của em 💌</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       23. ORDER LOOKUP MODAL (TRA CỨU ĐƠN HÀNG)
+       ========================================================================== -->
+  <div class="modal-overlay" id="lookup-modal">
+    <div class="modal-box" style="max-width: 560px; padding: 28px;">
+      <button class="modal-close-btn" onclick="closeOrderLookup()" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span class="section-tag" style="background: #E8F4EC; color: #4D6A54;">Tra Cứu Hỏa Tốc</span>
+        <h3 style="font-family: var(--font-serif); font-size: 22px; color: var(--primary-dark); margin-top: 4px;">Kiểm Tra Hành Trình Đơn Quà</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Nhập mã đơn hàng (VD: MD-GIFT-918234) hoặc số điện thoại người nhận</p>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+        <input type="text" id="lookup-input" class="form-control" placeholder="Nhập mã đơn MD-GIFT-... hoặc SĐT" style="font-weight: 700; text-transform: uppercase;">
+        <button type="button" class="btn-primary" style="padding: 10px 20px;" onclick="searchOrder()">
+          <i class="fa-solid fa-magnifying-glass"></i> Tra Cứu
+        </button>
+      </div>
+
+      <div id="lookup-result-container"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       AUTH MODAL (ĐĂNG NHẬP / ĐĂNG KÝ TÀI KHOẢN)
+       ========================================================================== -->
+  <div id="auth-modal" class="modal-overlay">
+    <div class="auth-modal-box">
+      <button type="button" class="modal-close-btn" onclick="closeAuthModal()" title="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div class="auth-header">
+        <div class="auth-header-logo">
+          <i class="fa-solid fa-gift" style="color: var(--accent); font-size: 24px;"></i>
+          <span style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--primary-dark);">My Dream</span>
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Trải nghiệm thế giới quà tặng tinh tế & ưu đãi thành viên</p>
+      </div>
+
+      <!-- Auth Tabs -->
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab-btn active" id="tab-login-btn" onclick="switchAuthTab('login')">Đăng Nhập</button>
+        <button type="button" class="auth-tab-btn" id="tab-register-btn" onclick="switchAuthTab('register')">Đăng Ký</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="form-login" onsubmit="handleLoginSubmit(event)">
+        <!-- Quick Demo Hints (Admin & Customer) -->
+        <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+          <div class="auth-demo-hint" onclick="fillAdminAccount()" title="Bấm để điền tài khoản Admin: Trần Huỳnh Ái Nhân" style="flex: 1; margin-bottom: 0; background: #FFF9ED; border-color: #D4A373; color: #7D4F38;">
+            <i class="fa-solid fa-crown" style="color: #D4A373; font-size: 13px;"></i>
+            <span><b>Admin:</b> Trần Huỳnh Ái Nhân</span>
+          </div>
+          <div class="auth-demo-hint" onclick="fillDemoAccount()" title="Bấm để điền tài khoản Khách hàng: Nguyễn Thùy Linh" style="flex: 1; margin-bottom: 0;">
+            <i class="fa-solid fa-user" style="color: var(--accent); font-size: 13px;"></i>
+            <span><b>Khách:</b> Thùy Linh</span>
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="login-email">Email hoặc Số điện thoại</label>
+          <div class="auth-input-wrap">
+            <i class="fa-regular fa-envelope auth-input-icon"></i>
+            <input type="text" id="login-email" placeholder="name@example.com hoặc SĐT" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+            <label for="login-password" style="margin-bottom: 0;">Mật khẩu</label>
+            <a href="javascript:void(0)" onclick="alert('Vui lòng liên hệ Hotline 0966 888 790 hoặc Zalo để được hỗ trợ cấp lại mật khẩu ngay lập tức!')" style="font-size: 11.5px; color: var(--accent); font-weight: 600;">Quên mật khẩu?</a>
+          </div>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock auth-input-icon"></i>
+            <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" class="auth-toggle-pwd" onclick="togglePasswordVisibility('login-password', this)">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+          <input type="checkbox" id="login-remember" checked style="cursor: pointer;">
+          <label for="login-remember" style="font-size: 12.5px; color: var(--text-muted); cursor: pointer; margin-bottom: 0;">Ghi nhớ đăng nhập trên thiết bị này</label>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 14px; font-weight: 700;">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng Nhập
+        </button>
+
+        <div class="auth-divider">
+          <span>hoặc kết nối nhanh</span>
+        </div>
+
+        <div class="auth-social-row">
+          <button type="button" class="auth-social-btn" onclick="quickSocialLogin('Google')">
+            <i class="fa-brands fa-google" style="color: #EA4335;"></i> Google
+          </button>
+          <button type="button" class="auth-social-btn" onclick="quickSocialLogin('Facebook')">
+            <i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Facebook
+          </button>
+        </div>
+      </form>
+
+      <!-- Register Form -->
+      <form id="form-register" style="display: none;" onsubmit="handleRegisterSubmit(event)">
+        <div class="auth-form-group">
+          <label for="reg-fullname">Họ và tên của bạn</label>
+          <div class="auth-input-wrap">
+            <i class="fa-regular fa-user auth-input-icon"></i>
+            <input type="text" id="reg-fullname" placeholder="Nguyễn Thùy Linh" required>
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="reg-phone">Số điện thoại liên hệ</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-phone auth-input-icon"></i>
+            <input type="tel" id="reg-phone" placeholder="0912 345 678" required>
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="reg-email">Địa chỉ Email</label>
+          <div class="auth-input-wrap">
+            <i class="fa-regular fa-envelope auth-input-icon"></i>
+            <input type="email" id="reg-email" placeholder="email@domain.com" required>
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="reg-password">Tạo mật khẩu (từ 6 ký tự)</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock auth-input-icon"></i>
+            <input type="password" id="reg-password" placeholder="Tối thiểu 6 ký tự" minlength="6" required>
+            <button type="button" class="auth-toggle-pwd" onclick="togglePasswordVisibility('reg-password', this)">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
+          Bằng cách đăng ký, bạn đồng ý với <a href="javascript:void(0)" style="color: var(--accent); text-decoration: underline;">Điều khoản dịch vụ</a> và <a href="javascript:void(0)" style="color: var(--accent); text-decoration: underline;">Chính sách bảo mật</a> của My Dream.
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 14px; font-weight: 700;">
+          <i class="fa-solid fa-user-plus"></i> Hoàn Tất Đăng Ký
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       24. FLOATING WIDGETS (HOTLINE, ZALO, BACK TO TOP)
+       ========================================================================== -->
+  <div class="floating-widgets">
+    <a href="tel:0966888790" class="float-action-btn float-hotline" title="Gọi Hotline 0966 888 790">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+    <a href="https://zalo.me/0966888790" target="_blank" class="float-action-btn float-zalo" title="Chat Zalo Tư Vấn">
+      <span style="font-size: 13px; font-weight: 800;">Zalo</span>
+    </a>
+    <button id="back-to-top" class="float-action-btn float-backtop" title="Lên đầu trang">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ==========================================================================
+       SCRIPTS
+       ========================================================================== -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Data & Main JS -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
